@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: abb_irb120_single_support
+    relative_path: urdf/irb120_3_58.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/abb_irb120_single_3_58.srdf
+  CONFIG:
+    author_name: marirena_kladeftira
+    author_email: mk2694@cornell.edu
+    generated_timestamp: 1737150058

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="abb_irb120_3_58_dual">
+  <xacro:include filename="$(find abb_irb120_3_58_dual_support)/urdf/abb_irb120_3_58.xacro"/>
+
+  <xacro:abb_irb120_3_58 prefix="robotA_"/>
+  <xacro:abb_irb120_3_58 prefix="robotB_"/>
+
+  <link name="world" />
+
+  <joint name="robotA_joint" type="fixed">
+    <parent link="world" />
+    <child link="robotA_base_link" />
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="robotB_joint" type="fixed">
+    <parent link="world" />
+    <child link = "robotB_base_link" />
+    <origin xyz="0.5347479398223676 -0.7939334915306736 0.0007630697140932686" rpy="0.00801613165265005 -0.0064154595608891625 3.133456800610911"/> 
+  </joint>
+
+</robot>
