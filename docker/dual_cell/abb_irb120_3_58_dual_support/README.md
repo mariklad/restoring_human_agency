@@ -1,0 +1,1 @@
+# abb_irb20_3_58_moveit_config

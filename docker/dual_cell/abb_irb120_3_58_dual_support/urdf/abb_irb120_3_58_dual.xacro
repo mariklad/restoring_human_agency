@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="abb_irb120_3_58_dual">
-  <xacro:include filename="$(find abb_irb120_3_58_dual_support)/urdf/abb_irb120_3_58.xacro"/>
+  <xacro:include filename="$(find abb_irb120_3_58_dual_support)/urdf/irb120_3_58_macro.xacro"/>
 
   <xacro:abb_irb120_3_58 prefix="robotA_"/>
   <xacro:abb_irb120_3_58 prefix="robotB_"/>
