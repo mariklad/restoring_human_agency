@@ -6,6 +6,9 @@ Spring 2025, Design Tech
 Instructor: Marirena Kladeftira
 
 ![ReConfig](Resources\assistive_drafting.png)
+=======
+![RECONFIG]([https://github.com/mariklad/restoring_human_agency/blob/main/Resources/assistive_drafting.png])
+>>>>>>> 944aec62770ee78671e5ed1112a981b6f1f565e6
 
 # Getting Started
 ## Requirements
