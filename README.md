@@ -60,6 +60,9 @@ https://www.rhino3d.com/access-rhino-7/
 
  ### 4. Install additional plugins
 Download Robot Components from the package manager in your Rhino or from Food4Rhino.
+
+Download the plugin FOX from food4rhino (https://www.food4rhino.com/en/app/fox). Once downloaded in grasshoper go to File> Components Folder and then copy all the files from the downloaded folder of FOX to your Components folder.
+
 Restart Rhino.
 
 You are all setup!
