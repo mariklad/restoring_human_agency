@@ -5,7 +5,7 @@ Spring 2025, Design Tech
 
 Instructor: Marirena Kladeftira
 
-![UNDO_01](https://github.com/user-attachments/assets/f4e4f6f2-ed98-4e5e-bf9c-48d187bd0b3b)
+![RECONFIG]([https://github.com/mariklad/restoring_human_agency/blob/main/Resources/assistive_drafting.png])
 
 # Getting Started
 ## Requirements
