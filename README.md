@@ -58,7 +58,7 @@ https://www.rhino3d.com/access-rhino-7/
  Open grasshopper in Rhino. Check for the compas installed plugins.
  Pull a "compas info" component, connect the output to a panel and check that the version is correct.
 
- ### 4. Check installation
+ ### 4. Install additional plugins
 Download Robot Components from the package manager in your Rhino or from Food4Rhino.
 Restart Rhino.
 
