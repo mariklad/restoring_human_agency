@@ -1,9 +1,9 @@
 # DESIGN 6197/4197: Special Topics
-Anthropocentric Models of Making With Cooperative Robots
+## Anthropocentric Models of Making With Cooperative Robots
 
-Spring 2025, Design Tech
+###Spring 2025, Design Tech
 
-Instructor: Marirena Kladeftira
+###Instructor: Marirena Kladeftira
 
 ![ReConfig](Resources/assistive_drafting.png)
 
