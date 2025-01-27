@@ -5,7 +5,7 @@ Spring 2025, Design Tech
 
 Instructor: Marirena Kladeftira
 
-![UNDO_01](Resources\assistive_drafting.png)
+![ReConfig](Resources\assistive_drafting.png)
 
 # Getting Started
 ## Requirements
