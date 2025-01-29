@@ -12,8 +12,8 @@ print(DATA)
 
 
 file_name = DATA + "/"+ "20241206_rob2_GRASP_D08.json"
+OUTPUT = os.path.abspath(os.path.join(HERE, '..', 'output'))
 output_path = os.path.join(file_name + '_output.json')
-print(output_path)
 
 PRODUCTION_LOG_CONFIG = dict(
     ENABLED=True,                       # Generate a log of received feedback
