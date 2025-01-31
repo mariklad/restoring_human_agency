@@ -42,7 +42,7 @@ https://www.rhino3d.com/access-rhino-7/
 (base) conda activate design6197
 ```
 ```anaconda prompt terminal
-(design6197) conda install compas_rcc=1.1.0
+(design6197) conda install compas_rrc=1.1.0
 ```
 ```anaconda prompt terminal
 (design6197) conda install compas_fab=0.27.0
