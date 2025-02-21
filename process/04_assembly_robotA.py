@@ -57,7 +57,6 @@ if __name__ == '__main__':
         feedback.subscribe(store_production_log)
 
     for i in range(len(production_data.actions)):
-    #for i in range(1700,1809,1):
 
         action = production_data.actions[i]
         prefixed_action_class_name = '{}{}'.format("rrc.", action.name)
