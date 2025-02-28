@@ -11,7 +11,7 @@ DATA = os.path.abspath(os.path.join(HERE, '..', 'data'))
 print(DATA)
 
 
-file_name = DATA + "/"+ "20241206_rob2_GRASP_D08.json"
+file_name = DATA + "/"+ "20250227_robotA_place_stick00.json"
 OUTPUT = os.path.abspath(os.path.join(HERE, '..', 'output'))
 output_path = os.path.join(file_name + '_output.json')
 
