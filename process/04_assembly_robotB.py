@@ -6,10 +6,17 @@ import sys
 import roslibpy
 import time
 
+
 HERE = os.path.dirname(__file__)
 DATA = os.path.abspath(os.path.join(HERE, '..', 'data'))
-file_name = DATA + "/"+ "20240915_robotB_11.json"
+#print(DATA)
+
+
+file_name = DATA + "/"+ "20250305_robotB_place_stick01.json"
+#OUTPUT = os.path.abspath(os.path.join(HERE, '..', 'output'))
+OUTPUT = os.path.abspath(os.path.join(DATA,'output'))
 output_path = os.path.join(file_name + '_output.json')
+
 
 PRODUCTION_LOG_CONFIG = dict(
     ENABLED=True,                       # Generate a log of received feedback
@@ -53,7 +60,7 @@ if __name__ == '__main__':
     print('Connected.')
 
     if PRODUCTION_LOG_CONFIG['ENABLED']:
-        feedback = roslibpy.Topic(ros, '/rob1/robot_response', 'compas_rrc_driver/RobotMessage')
+        feedback = roslibpy.Topic(ros, '/rob2/robot_response', 'compas_rrc_driver/RobotMessage')
         feedback.subscribe(store_production_log)
 
     for i in range(len(production_data.actions)):

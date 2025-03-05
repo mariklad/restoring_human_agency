@@ -6,10 +6,23 @@ import sys
 import roslibpy
 import time
 
+#HERE = os.path.dirname(__file__)
+#DATA = os.path.abspath(os.path.join(HERE, '..', 'data'))
+#file_name = DATA + "/"+ "20241104_robotA_10.json"
+#output_path = os.path.join(file_name + '_output.json')
+
 HERE = os.path.dirname(__file__)
 DATA = os.path.abspath(os.path.join(HERE, '..', 'data'))
-file_name = DATA + "/"+ "20241104_robotA_10.json"
+#print(DATA, HERE)
+
+
+file_name = DATA + "/"+ "20250305_robotA_place_stick00_alternative.json"
+#OUTPUT = os.path.abspath(os.path.join(HERE, '..', 'output'))
+OUTPUT = os.path.abspath(os.path.join(DATA,'output'))
 output_path = os.path.join(file_name + '_output.json')
+print(output_path)
+
+
 
 PRODUCTION_LOG_CONFIG = dict(
     ENABLED=True,                       # Generate a log of received feedback
