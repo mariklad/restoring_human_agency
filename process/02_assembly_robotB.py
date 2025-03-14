@@ -6,20 +6,24 @@ import sys
 import roslibpy
 import time
 
+
 HERE = os.path.dirname(__file__)
 DATA = os.path.abspath(os.path.join(HERE, '..', 'data'))
-print(DATA)
+#print(DATA)
 
 
-file_name = DATA + "/"+ "20241204_rob2_CUT_H01.json"
+file_name = DATA + "/"+ "20250313_robotB_place_stick01.json"
+#OUTPUT = os.path.abspath(os.path.join(HERE, '..', 'output'))
+OUTPUT = os.path.abspath(os.path.join(DATA,'output'))
 output_path = os.path.join(file_name + '_output.json')
+
 
 PRODUCTION_LOG_CONFIG = dict(
     ENABLED=True,                       # Generate a log of received feedback
     OVERWRITE=True,                     # When True, it will create a new log file every time, otherwise, it will append to existing
     CONSOLE_OUTPUT=True,                # When True, it will print received feedback on the console
 )
- 
+
 if __name__ == '__main__':
 
     #open json nd read production data
@@ -31,7 +35,22 @@ if __name__ == '__main__':
     else:
         print('Cannot find production data file: {}'.format(file_name))
         sys.exit(-1)
-   
+    
+    #to receive feedback
+    if PRODUCTION_LOG_CONFIG['ENABLED']:
+        print('Using production output file: {}'.format(output_path))
+        PRODUCTION_LOG = []
+
+        if not PRODUCTION_LOG_CONFIG['OVERWRITE']:
+            if os.path.exists(output_path):
+                with open(output_path, 'r') as ofp:
+                    PRODUCTION_LOG = json.load(ofp)
+
+    def store_production_log(msg):
+        PRODUCTION_LOG.append(msg)
+        if PRODUCTION_LOG_CONFIG['CONSOLE_OUTPUT']:
+            print(msg['instruction'], msg['feedback'], msg['float_values'], msg['feedback_id'])
+
     #Create Ros Client
     ros = rrc.RosClient()
     ros.run()
@@ -40,7 +59,10 @@ if __name__ == '__main__':
     abb = rrc.AbbClient(ros, '/rob2')
     print('Connected.')
 
-  
+    if PRODUCTION_LOG_CONFIG['ENABLED']:
+        feedback = roslibpy.Topic(ros, '/rob2/robot_response', 'compas_rrc_driver/RobotMessage')
+        feedback.subscribe(store_production_log)
+
     for i in range(len(production_data.actions)):
     #for i in range(1700,1809,1):
 
@@ -55,6 +77,10 @@ if __name__ == '__main__':
         time.sleep(0.01)
         print(instruction)
         # Store production log
+
+    if PRODUCTION_LOG_CONFIG['ENABLED']:
+        with open(output_path, 'w+') as ofp:
+            json.dump(PRODUCTION_LOG, ofp, indent=2, sort_keys=True)
 
     #End of Code
     print('Finished')

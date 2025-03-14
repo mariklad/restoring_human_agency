@@ -6,16 +6,23 @@ import sys
 import roslibpy
 import time
 
+#HERE = os.path.dirname(__file__)
+#DATA = os.path.abspath(os.path.join(HERE, '..', 'data'))
+#file_name = DATA + "/"+ "20241104_robotA_10.json"
+#output_path = os.path.join(file_name + '_output.json')
 
 HERE = os.path.dirname(__file__)
 DATA = os.path.abspath(os.path.join(HERE, '..', 'data'))
-#print(DATA)
+#print(DATA, HERE)
 
 
-file_name = DATA + "/"+ "20250305_robotB_place_stick01.json"
+file_name = DATA + "/"+ "20250313_robotA_place_stick00.json"
 #OUTPUT = os.path.abspath(os.path.join(HERE, '..', 'output'))
 OUTPUT = os.path.abspath(os.path.join(DATA,'output'))
-output_path = os.path.join(file_name + '_output.json')
+base_name = file_name.rsplit(".json", 1)[0]  # Remove .json extension
+output_path = os.path.join(base_name + '_output.json')
+#print(output_path)
+
 
 
 PRODUCTION_LOG_CONFIG = dict(
@@ -56,15 +63,14 @@ if __name__ == '__main__':
     ros.run()
 
     #Create ABB Client
-    abb = rrc.AbbClient(ros, '/rob2')
+    abb = rrc.AbbClient(ros, '/rob1')
     print('Connected.')
 
     if PRODUCTION_LOG_CONFIG['ENABLED']:
-        feedback = roslibpy.Topic(ros, '/rob2/robot_response', 'compas_rrc_driver/RobotMessage')
+        feedback = roslibpy.Topic(ros, '/rob1/robot_response', 'compas_rrc_driver/RobotMessage')
         feedback.subscribe(store_production_log)
 
     for i in range(len(production_data.actions)):
-    #for i in range(1700,1809,1):
 
         action = production_data.actions[i]
         prefixed_action_class_name = '{}{}'.format("rrc.", action.name)
